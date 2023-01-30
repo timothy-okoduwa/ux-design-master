@@ -1,0 +1,199 @@
+.containerr {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.snow{
+    width:100%;
+
+}
+.avatar{
+    width: 20%;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: start;
+  padding-left: 60px;
+   width: 100%;
+}
+.manrope{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 50px;
+text-align: start;
+
+}
+.discuss{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+}
+.faces{
+    margin-top: 15px;
+}
+.butt{
+    margin-top:20px ;
+    font-family: 'Manrope';
+font-style: normal;
+font-size: 16px;
+font-weight: 700;
+text-align: center;
+text-transform: uppercase;
+outline: #00AB4F !important;
+background: #00AB4F !important;
+color: white !important;
+}
+
+
+
+@media screen and (max-width:991px){
+    .centered {
+  position: absolute;
+  /* top: 50%; */
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: start;
+}
+.manrope{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+text-align: start;
+}
+.discuss{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+margin-top: 5px;
+}
+.avatar{
+    width: 35%;
+}
+}
+.main{
+    background-color: black;
+    color: white;
+    padding-bottom: 40px;
+
+}
+.current{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+padding-top: 30px;
+}
+.block{
+    
+    height: 300px;
+    width: 300px;
+object-fit: cover;
+}
+.episode{
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+}
+.soft{
+background-color: black;
+
+}
+.span{
+    margin-left: 25px;
+}
+.talks{
+    margin-top: 45px;
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+color: #FFFFFF;
+opacity: 0.5;
+}
+.play{
+    margin-top: 20px;
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+}
+
+
+.App {
+	 font-family: sans-serif;
+	 text-align: center;
+	 /* width: 600px; */
+	 /* height: 100vh; */
+	 display: flex;
+	 align-items: center;
+	 /* justify-content: end; */
+}
+ .ul {
+	 display: flex;
+	 align-items: center;
+	 list-style: none;
+	 max-width: 100%;
+	 overflow-x: scroll;
+	 scroll-behavior: smooth;
+}
+ .ul::-webkit-scrollbar {
+	 background: transparent;
+	/* make scrollbar transparent */
+	 -webkit-appearance: none;
+	 width: 0;
+	 height: 0;
+}
+ .ul li {
+	 background: #ff61f6;
+	 color: #fff;
+	 padding: 8px;
+	 border-radius: 4px;
+	 margin: 0 4px;
+	 white-space: nowrap;
+}
+ /* button {
+	 border: 0;
+	 color: #777;
+	 font-size: 24px;
+	 margin: 0 8px;
+}
+  */
+.next{
+    /* background-color: red; */
+    height: 40px;
+    width: 60px;
+    border-radius: 55px;
+    cursor: pointer;
+    background-color:#191919;
+   /* border: 0.3px solid whitesmoke; */
+   padding: 13px;
+   margin-right: -40px;
+   z-index: 1;
+}
+.next2{
+    /* background-color: red; */
+    height: 40px;
+    width: 60px;
+    border-radius: 55px;
+    cursor: pointer;
+    background-color:#191919;
+   /* border: 0.3px solid whitesmoke; */
+   padding: 13px;
+   margin-left: -40px;
+   z-index: 1;
+}
+
+
+
+
+
+

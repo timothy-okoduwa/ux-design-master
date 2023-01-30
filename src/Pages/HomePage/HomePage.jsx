@@ -1,0 +1,38 @@
+import React from 'react'
+import './HomePage.css';
+import s from '../image/hero.svg'
+import a from '../image/avatar.png'
+import Button from 'react-bootstrap/Button';
+import {BsSpotify} from 'react-icons/bs';
+import Episode from './Episode';
+const HomePage = () => {
+  return (
+    <div>
+      <div className="containerr">
+        <img src={s} alt="Snow" className="snow" />
+
+        <div className="centered">
+          <div className="manrope">
+            Listen to our Podcast. <br />
+            Don’t miss out.
+          </div>
+          <div className="discuss">
+            We talk about everything on this platfrom. We
+            <br /> share experiences, ideas and discuss about
+            <br /> design Lifestyle.
+          </div>
+          <div className="faces">
+            <img src={a} alt="Snow" className="avatar" />
+          </div>
+          <Button className="butt" variant='' >
+            Listen on Spotify <BsSpotify />
+          </Button>
+        </div>
+      </div>
+
+      <Episode/>
+    </div>
+  );
+}
+
+export default HomePage
