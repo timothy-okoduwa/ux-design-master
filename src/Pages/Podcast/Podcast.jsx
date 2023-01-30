@@ -1,6 +1,6 @@
 import React from 'react'
 import './Podcast.css'
-import s from '../image/podcast.png'
+// import s from '../image/podcast.png'
 // import Iframe from 'react-iframe'
 import useFetch from '../../components/Hooks/useFetch'
 import { useParams } from 'react-router-dom'
@@ -18,7 +18,7 @@ const Podcast = () => {
        
 
           <div className="container pt-4 letstyle">
-            <div className="playlists">PlayList Tracks</div>
+            <div className="playlists">PlayList Tracks (episodes)</div>
             <div>
               {data?.episodes.map((epi) => (
                 <iframe
@@ -27,6 +27,7 @@ const Podcast = () => {
                   width="100%"
                   height="352"
                   frameBorder="0"
+                  title='dunno'
                   allowfullscreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"

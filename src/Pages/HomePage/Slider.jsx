@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import './HomePage.css';
+import a from '../image/1.png'
+import b from '../image/3.png'
+import c from '../image/5.png'
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 
 const Slider = ({ data }) => {
@@ -55,16 +58,25 @@ const Slider = ({ data }) => {
             onMouseLeave={(e) => anim2(e)}
           />
         )}
-
+{/* 
         {data.map((props) => (
-          <div className="ul" ref={scrl} onScroll={scrollCheck} key={props.id}>
+          <div className="ul" ref={scrl} onScroll={scrollCheck} >
             <img
               src={`http://localhost:1337${props.thumbnail.url}`}
-            //   className="imagetag"
-              alt="wow"
+              className="imagetag2"
+             
             />
+
+
           </div>
-        ))}
+        ))} */}
+        <div className="ul" ref={scrl} onScroll={scrollCheck}>
+          <img src={a} className="imagetag2" alt='wow' />
+          <img src={b} className="imagetag2" alt='wow' />
+          <img src={c} className="imagetag2" alt='wow' />
+          <img src={a} className="imagetag2" alt='wow' />
+       
+        </div>
 
         {!scrolEnd && (
           <MdArrowForwardIos
