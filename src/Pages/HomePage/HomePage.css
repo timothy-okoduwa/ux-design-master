@@ -191,9 +191,70 @@ font-size: 25px;
    margin-left: -40px;
    z-index: 1;
 }
+.hot{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 800;
+font-size: 25px;
+line-height: 44px;
+padding-top: 25px;
+}
+.hmm{
+    display: flex;
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
+    justify-content: center;
+}
+.carditself{
+    background: #191919 !important;
+    margin-top: 30px !important;
+    /* cursor: pointer !important; */
+}
+.imagetag{
+    width: 25%;
+   object-fit: cover;
+}
+.tit{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 33px;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+.dist{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 160%;
+color: #FFFFFF;
+/* background-color: red; */
+width: 70%;
+opacity: 0.5;
+}
+.list{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+}
 
 
 
 
+@media screen and (max-width:995px){
+    .dist{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 160%;
+color: #FFFFFF;
+/* background-color: red; */
+width: 100%;
+opacity: 0.5;
+}
 
-
+}

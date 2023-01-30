@@ -1,0 +1,37 @@
+/* Container holding the image and the text */
+.containerr {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+      font-family: 'Manrope';
+      font-weight: 800;
+      font-size: 25px;
+}
+.playlists{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 800;
+font-size: 35px;
+margin: 10px 0 30px 0 ;
+color: #FFFFFF;
+}
+.aurthor{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+margin: 10px 0 30px 0 ;
+color: #FFFFFF;
+}
+.letstyle{
+ border-top: 1px solid white;
+ 
+}

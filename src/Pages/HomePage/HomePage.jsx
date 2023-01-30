@@ -1,13 +1,13 @@
 import React from 'react'
 import './HomePage.css';
-import s from '../image/hero.svg'
+import s from '../image/IMG.png'
 import a from '../image/avatar.png'
 import Button from 'react-bootstrap/Button';
 import {BsSpotify} from 'react-icons/bs';
 import Episode from './Episode';
 const HomePage = () => {
   return (
-    <div>
+    <div style={{marginTop:'60px'}}>
       <div className="containerr">
         <img src={s} alt="Snow" className="snow" />
 

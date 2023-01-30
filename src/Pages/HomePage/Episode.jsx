@@ -1,58 +1,20 @@
-import { useState, useRef } from 'react';
-import gsap from 'gsap';
+import React from 'react';
 import './HomePage.css';
-import s from '../image/mas.png';
-import a from '../image/1.png';
-import b from '../image/3.png';
-import c from '../image/5.png';
 import { BsPlayFill } from 'react-icons/bs';
-import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
+import s from '../image/mas.png';
+import PlayList from './PlayList';
+import Slider from './Slider';
+import useFetch from '../../components/Hooks/useFetch';
 const Episode = () => {
-  let scrl = useRef(null);
-  const [scrollX, setscrollX] = useState(0);
-  const [scrolEnd, setscrolEnd] = useState(false);
 
-  //Slide click
-  const slide = (shift) => {
-    scrl.current.scrollLeft += shift;
-    setscrollX(scrollX + shift);
 
-    if (
-      Math.floor(scrl.current.scrollWidth - scrl.current.scrollLeft) <=
-      scrl.current.offsetWidth
-    ) {
-      setscrolEnd(true);
-    } else {
-      setscrolEnd(false);
-    }
-  };
-
-  //Anim
-  const anim = (e) => {
-    gsap.from(e.target, { scale: 1 });
-    gsap.to(e.target, { scale: 1.2 });
-  };
-  const anim2 = (e) => {
-    gsap.from(e.target, { scale: 1.2 });
-    gsap.to(e.target, { scale: 1 });
-  };
-
-  const scrollCheck = () => {
-    setscrollX(scrl.current.scrollLeft);
-    if (
-      Math.floor(scrl.current.scrollWidth - scrl.current.scrollLeft) <=
-      scrl.current.offsetWidth
-    ) {
-      setscrolEnd(true);
-    } else {
-      setscrolEnd(false);
-    }
-  };
-
+   const { loading, error, data } = useFetch('http://localhost:1337/playlists');
+   if (loading) return <p>loading</p>;
+   if (error) return <p>error</p>;
   return (
     <div className="main">
       <div className="container">
-        <div className="current">Current Episode</div>
+        <div className="current">hottest Episode</div>
         <div className="row mt-5">
           <div className="col col-12 col-lg-6 ">
             <div className="block">
@@ -79,43 +41,14 @@ const Episode = () => {
             </div>
           </div>
         </div>
-        <div className="current mt-4">Playlist </div>
+        <div className="current mt-4 mb-4">Playlist </div>
 
-        <div className="App">
-          {scrollX !== 0 && (
-            
-              <MdArrowBackIosNew
-                className="next"
-                onClick={() => slide(-300)}
-                onMouseEnter={(e) => anim(e)}
-                onMouseLeave={(e) => anim2(e)}
-              />
-         
-          )}
-          <div className="ul" ref={scrl} onScroll={scrollCheck}>
-            <img src={a} alt="mas" />
-            <img src={b} alt="mas" />
-            <img src={c} alt="mas" />
-            <img src={c} alt="mas" />
-            <img src={c} alt="mas" />
-            <img src={c} alt="mas" />
-            <img src={c} alt="mas" />
-            <img src={c} alt="mas" />
-            <img src={c} alt="mas" />
-          </div>
-          {!scrolEnd && (
-        
-              <MdArrowForwardIos
-                className="next2"
-                onClick={() => slide(+300)}
-                onMouseEnter={(e) => anim(e)}
-                onMouseLeave={(e) => anim2(e)}
-                style={{fontSize:'3px'}}
-              />
-          
-          )}
-        </div>
+        <Slider data={data} />
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <PlayList data={data} />
     </div>
   );
 };
