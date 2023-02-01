@@ -14,20 +14,20 @@ const Podcast = () => {
   return (
     <>
       {
-        <div style={{ background: 'black', color: 'white',paddingTop:'120px' }}>
-       
-
+        <div
+          style={{ background: 'black', color: 'white', paddingTop: '120px' }}
+        >
           <div className="container pt-4 letstyle">
-            <div className="playlists">PlayList Tracks (episodes)</div>
+            <div className="playlists">All Episodes</div>
             <div>
               {data?.episodes.map((epi) => (
                 <iframe
-                  style={{ borderRadius: '12px',marginTop:'25px' }}
+                  style={{ borderRadius: '12px', marginTop: '25px' }}
                   src={epi.mp3link}
                   width="100%"
                   height="352"
                   frameBorder="0"
-                  title='dunno'
+                  title="dunno"
                   allowfullscreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"

@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import './HomePage.css';
-import a from '../image/1.png'
-import b from '../image/3.png'
-import c from '../image/5.png'
+// import a from '../image/1.png';
+// import b from '../image/3.png';
+// import c from '../image/5.png';
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 
 const Slider = ({ data }) => {
@@ -50,46 +50,42 @@ const Slider = ({ data }) => {
   return (
     <div>
       <div className="App">
-        {scrollX !== 0 && (
-          <MdArrowBackIosNew
-            className="next"
-            onClick={() => slide(-300)}
-            onMouseEnter={(e) => anim(e)}
-            onMouseLeave={(e) => anim2(e)}
-          />
-        )}
-{/* 
-        {data.map((props) => (
-          <div className="ul" ref={scrl} onScroll={scrollCheck} >
-            <img
-              src={`http://localhost:1337${props.thumbnail.url}`}
-              className="imagetag2"
-             
+        
+        <div className="man">
+          {scrollX !== 0 && (
+            <MdArrowBackIosNew
+              className="next"
+              onClick={() => slide(-300)}
+              onMouseEnter={(e) => anim(e)}
+              onMouseLeave={(e) => anim2(e)}
             />
-
-
-          </div>
-        ))} */}
-        <div className="ul" ref={scrl} onScroll={scrollCheck}>
-          <img src={a} className="imagetag2" alt='wow' />
-          <img src={b} className="imagetag2" alt='wow' />
-          <img src={c} className="imagetag2" alt='wow' />
-          <img src={a} className="imagetag2" alt='wow' />
-       
+          )}
         </div>
-
-        {!scrolEnd && (
-          <MdArrowForwardIos
-            className="next2"
-            onClick={() => slide(+300)}
-            onMouseEnter={(e) => anim(e)}
-            onMouseLeave={(e) => anim2(e)}
-            style={{ fontSize: '3px' }}
-          />
-        )}
+        <div className="ul" ref={scrl} onScroll={scrollCheck}>
+          {data.map((props) => (
+            <div>
+              <img
+                src={`http://localhost:1337${props.thumbnail.url}`}
+                className="imagetag2"
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="man">
+          {!scrolEnd && (
+            <MdArrowForwardIos
+              className="next2"
+              onClick={() => slide(+300)}
+              onMouseEnter={(e) => anim(e)}
+              onMouseLeave={(e) => anim2(e)}
+              style={{ fontSize: '3px' }}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Slider
+export default Slider;

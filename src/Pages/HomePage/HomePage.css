@@ -51,6 +51,20 @@ color: white !important;
 
 
 
+@media screen and (max-width:768px){
+    .centered {
+  position: absolute;
+  /* top: 50%; */
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: start;
+  margin-top: 6px;
+}
+
+}
+
+
 @media screen and (max-width:991px){
     .centered {
   position: absolute;
@@ -92,7 +106,7 @@ font-size: 20px;
 padding-top: 30px;
 }
 .block{
-    
+
     height: 300px;
     width: 300px;
 object-fit: cover;
@@ -108,7 +122,7 @@ background-color: black;
 
 }
 .span{
-    margin-left: 25px;
+    margin-left: 15px;
 }
 .talks{
     margin-top: 45px;
@@ -145,13 +159,13 @@ font-size: 25px;
 	 overflow-x: scroll;
 	 scroll-behavior: smooth;
 }
- .ul::-webkit-scrollbar {
+  .ul::-webkit-scrollbar {
 	 background: transparent;
 	/* make scrollbar transparent */
 	 -webkit-appearance: none;
 	 width: 0;
 	 height: 0;
-}
+} 
  .ul li {
 	 background: #ff61f6;
 	 color: #fff;
@@ -170,27 +184,33 @@ font-size: 25px;
 .next{
     /* background-color: red; */
     height: 40px;
-    width: 60px;
+   width: 40px;
     border-radius: 55px;
     cursor: pointer;
     background-color:#191919;
-   /* border: 0.3px solid whitesmoke; */
-   padding: 13px;
+   padding: 15px;
    margin-right: -40px;
    z-index: 1;
 }
 .next2{
     /* background-color: red; */
     height: 40px;
-    width: 60px;
+    width: 40px;
     border-radius: 55px;
     cursor: pointer;
     background-color:#191919;
-   /* border: 0.3px solid whitesmoke; */
-   padding: 13px;
+   padding: 15px;
    margin-left: -40px;
    z-index: 1;
 }
+
+.man{
+    
+    height: 100%;
+    z-index: 100;
+  
+}
+
 .hot{
     font-family: 'Manrope';
 font-style: normal;
@@ -215,9 +235,9 @@ padding-top: 25px;
    object-fit: cover;
 }
 .imagetag2{
-    width: 100%;
+    /* width: 100%; */
    object-fit: cover;
-   margin: 20px;
+   margin-left: 25px;
 
 }
 .tit{

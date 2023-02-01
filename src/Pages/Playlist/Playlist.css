@@ -1,0 +1,33 @@
+.plist{
+    background-color: black;
+
+}
+.care{
+    text-align: center;
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+color: #FFFFFF;
+    padding: 70px 0 0 0;
+}
+.inpoutt{
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+ padding: 20px;
+}
+input{
+       width: 400px;
+       height: 50px;
+       outline: none;
+       border: none;
+       border-radius: 8px;
+       background-color: #ffffff2c;
+       color: #bdb9b9;
+       padding-left: 20px;
+           font-family: 'Manrope';
+}
+.downward{
+    margin-top: 140px;
+}

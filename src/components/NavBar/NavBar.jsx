@@ -19,11 +19,13 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav"  className='hamburger'/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              {/* <Link to='/podcast' style={{textDecoration:'none'}}> 
-              <Nav className="navs">Podcast</Nav>
-              </Link> */}
+              <Link to='/playlist' style={{textDecoration:'none'}}> 
+              <Nav className="navs">Playlist</Nav>
+              </Link>
              
-              <Nav className="navs">About</Nav>
+              {/* <Link to='/single' style={{textDecoration:'none'}}> 
+              <Nav className="navs">Single Podcast</Nav>
+              </Link> */}
               <Nav className="navs">Contact</Nav>
               <Nav className="navs">Login</Nav>
             </Nav>

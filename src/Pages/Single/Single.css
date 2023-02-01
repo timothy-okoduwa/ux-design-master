@@ -1,0 +1,27 @@
+.plist{
+    background-color: black;
+
+}
+.care{
+    text-align: center;
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+color: #FFFFFF;
+
+
+}
+
+@media screen and (max-width:768px){
+    .care{
+    text-align: center;
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 18px !important;
+color: #FFFFFF;
+
+
+}
+}

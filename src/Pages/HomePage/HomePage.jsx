@@ -2,8 +2,8 @@ import React from 'react'
 import './HomePage.css';
 import s from '../image/IMG.png'
 import a from '../image/avatar.png'
-import Button from 'react-bootstrap/Button';
-import {BsSpotify} from 'react-icons/bs';
+// import Button from 'react-bootstrap/Button';
+// import {BsSpotify} from 'react-icons/bs';
 import Episode from './Episode';
 const HomePage = () => {
   return (
@@ -24,9 +24,9 @@ const HomePage = () => {
           <div className="faces">
             <img src={a} alt="Snow" className="avatar" />
           </div>
-          <Button className="butt" variant='' >
+          {/* <Button className="butt" variant='' >
             Listen on Spotify <BsSpotify />
-          </Button>
+          </Button> */}
         </div>
       </div>
 
