@@ -5,6 +5,7 @@ import a from '../image/avatar.png'
 // import Button from 'react-bootstrap/Button';
 // import {BsSpotify} from 'react-icons/bs';
 import Episode from './Episode';
+import Hottest from './Hottest';
 const HomePage = () => {
   return (
     <div style={{marginTop:'60px'}}>
@@ -29,7 +30,7 @@ const HomePage = () => {
           </Button> */}
         </div>
       </div>
-
+{/* <Hottest/> */}
       <Episode/>
     </div>
   );

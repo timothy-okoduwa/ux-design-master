@@ -7,8 +7,8 @@ import d from '../image/avatar.png';
 import { Link } from 'react-router-dom';
 const Playlist = () => {
      const [search, setSearch] = React.useState('');
-         const { loading, error, data } = useFetch(
-           'http://localhost:1337/playlists'
+         const { loading, error, estate } = useFetch(
+           'http://localhost:1337/api/playlists?populate=*'
          );
          if (loading) return <p>loading</p>;
          if (error) return <p>error</p>;
@@ -28,15 +28,17 @@ const Playlist = () => {
       <div className="container">
         <div className="downward">
           <div className="cardHolder">
-            {data
+            {estate
               .filter((props) => {
                 if (search === '') {
                   return props;
                 } else if (
-                  props.authorName.toLowerCase().includes(search.toLowerCase())
+                  props.attributes.authorName
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
                 ) {
                   return props;
-                } 
+                }
               })
               .map((props) => (
                 <Card className="carditself" key={props.id}>
@@ -46,15 +48,18 @@ const Playlist = () => {
                   >
                     <div className="hmm">
                       <img
-                        src={`http://localhost:1337${props.thumbnail.url}`}
+                        src={`http://localhost:1337${props.attributes.thumbnail.data.attributes.url}`}
                         className="imagetag"
                         alt="wow"
                       />
                       <Card.Body>
                         <div className="tit">
-                          {props.authorName} - {props.playlistName}
+                          {props.attributes.authorName} -{' '}
+                          {props.attributes.playlistName}
                         </div>
-                        <div className="dist">{props.description}</div>
+                        <div className="dist">
+                          {props.attributes.description}
+                        </div>
                         <div className="mt-4">
                           <img src={d} alt=" " style={{ width: '25%' }} />
                           <span className="px-3 list">Listening Now</span>

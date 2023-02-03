@@ -6,7 +6,7 @@ import './HomePage.css';
 // import c from '../image/5.png';
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 
-const Slider = ({ data }) => {
+const Slider = ({ estate }) => {
   let scrl = useRef(null);
   const [scrollX, setscrollX] = useState(0);
   const [scrolEnd, setscrolEnd] = useState(false);
@@ -50,7 +50,6 @@ const Slider = ({ data }) => {
   return (
     <div>
       <div className="App">
-        
         <div className="man">
           {scrollX !== 0 && (
             <MdArrowBackIosNew
@@ -62,12 +61,12 @@ const Slider = ({ data }) => {
           )}
         </div>
         <div className="ul" ref={scrl} onScroll={scrollCheck}>
-          {data.map((props) => (
+          {estate.map((props) => (
             <div>
               <img
-                src={`http://localhost:1337${props.thumbnail.url}`}
+                src={`http://localhost:1337${props.attributes.thumbnail.data.attributes.url}`}
                 className="imagetag2"
-                alt=""
+                alt={props.attributes.thumbnail.data.attributes.ext}
               />
             </div>
           ))}

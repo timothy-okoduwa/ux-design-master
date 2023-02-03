@@ -4,8 +4,8 @@ import { BsPlayFill } from 'react-icons/bs';
 // import s from '../image/mas.png';
 import useFetch from '../../components/Hooks/useFetch';
 const Hottest = () => {
-             const { loading, error, data } = useFetch(
-               'http://localhost:1337/hottests'
+             const { loading, error, estate } = useFetch(
+               'http://localhost:1337/api/hottests'
              );
              if (loading) return <p>loading</p>;
              if (error) return <p>error</p>;
@@ -13,18 +13,18 @@ const Hottest = () => {
     <div>
       <div className="current pt-5">hottest Episode</div>
       <div className="row mt-5">
-        {data.map((props) => (
+        {estate.map((props) => (
           <>
             <div className="col col-12 col-lg-6 ">
               <div className="">
                 <iframe
                   style={{ borderRadius: '12px' }}
-                  src={props.link}
+                  src={props.attributes.link}
                   width="100%"
                   height="352"
                   frameBorder="0"
                   allowfullscreen=""
-                  title='wonderful'
+                  title="wonderful"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 ></iframe>
@@ -33,13 +33,11 @@ const Hottest = () => {
             <div className="col col-12 col-lg-6 d-flex justify-content-center mt-5">
               <div className="soft">
                 <div className="episode">
-                  <span>{props.creatorName}</span>
+                  <span>{props.attributes.creatorName}</span>
                   <span className="span">.</span>
-                  <span className="span"> {props.podcastName} </span>
+                  <span className="span"> {props.attributes.podcastName} </span>
                 </div>
-                <div className="talks">
-                {props.description}
-                </div>
+                <div className="talks">{props.attributes.description}</div>
                 <div className="play">
                   <BsPlayFill /> 23k
                 </div>

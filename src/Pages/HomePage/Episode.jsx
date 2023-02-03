@@ -9,23 +9,24 @@ import Hottest from './Hottest';
 import Single from '../Single/Single'
 const Episode = () => {
 
-
-   const { loading, error, data } = useFetch('http://localhost:1337/playlists');
-   if (loading) return <p>loading</p>;
-   if (error) return <p>error</p>;
+             const { loading, error, estate } = useFetch(
+               'http://localhost:1337/api/playlists?populate=*'
+             );
+             if (loading) return <p>loading</p>;
+             if (error) return <p>error</p>;
   return (
     <div className="main">
       <div className="container">
-<Hottest/>
+        <Hottest />
         <div className="current mt-4 mb-4">Top Creators </div>
 
-        <Slider data={data} />
+        <Slider estate={estate} />
       </div>
-      <br/>
-      <Single/>
-      <br/>
-      <br/>
-      <PlayList data={data} />
+      <br />
+      <Single />
+      <br />
+      <br />
+      <PlayList estate={estate} />
     </div>
   );
 };

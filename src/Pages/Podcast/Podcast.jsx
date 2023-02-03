@@ -6,8 +6,8 @@ import useFetch from '../../components/Hooks/useFetch'
 import { useParams } from 'react-router-dom'
 const Podcast = () => {
   const { id } = useParams();
-  const { loading, error, data } = useFetch(
-    'http://localhost:1337/playlists/' + id
+  const { loading, error, estate } = useFetch(
+    `http://localhost:1337/api/playlists/${id}?populate=episodes`
   );
       if (loading) return <p>loading</p>;
       if (error) return <p>error</p>;
@@ -19,20 +19,23 @@ const Podcast = () => {
         >
           <div className="container pt-4 letstyle">
             <div className="playlists">All Episodes</div>
+            {estate.attributes.authorName}
             <div>
-              {data?.episodes.map((epi) => (
-                <iframe
-                  style={{ borderRadius: '12px', marginTop: '25px' }}
-                  src={epi.mp3link}
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  title="dunno"
-                  allowfullscreen=""
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
-                // <div>{epi.episodeName}</div>
+              {estate?.attributes?.episodes?.data?.map((ous) => (
+                <div>
+                  <iframe
+                    style={{ borderRadius: '12px', marginTop: '25px' }}
+                    src={ous?.attributes?.mp3link}
+                    width="100%"
+                    height="352"
+                    frameBorder="0"
+                    title="dunno"
+                    allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                  <div>{ous.authorName}</div>
+                </div>
               ))}
             </div>
           </div>
