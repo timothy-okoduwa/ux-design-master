@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Playlist = () => {
      const [search, setSearch] = React.useState('');
          const { loading, error, estate } = useFetch(
-           'http://localhost:1337/api/playlists?populate=*'
+           'https://podcast-backend-production.up.railway.app/api/playlists?populate=*'
          );
          if (loading) return <p>loading</p>;
          if (error) return <p>error</p>;
@@ -48,7 +48,7 @@ const Playlist = () => {
                   >
                     <div className="hmm">
                       <img
-                        src={`http://localhost:1337${props.attributes.thumbnail.data.attributes.url}`}
+                        src={`https://podcast-backend-production.up.railway.app${props.attributes.thumbnail.data.attributes.url}`}
                         className="imagetag"
                         alt="wow"
                       />

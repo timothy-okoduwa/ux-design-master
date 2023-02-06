@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import useFetch from '../../components/Hooks/useFetch';
 const PlayList = () => {
          const { loading, error, estate } = useFetch(
-           'http://localhost:1337/api/playlists?pagination[page]=1&pagination[pageSize]=2&populate=thumbnail'
+           'https://podcast-backend-production.up.railway.app/api/playlists?pagination[page]=1&pagination[pageSize]=2&populate=thumbnail'
          );
          if (loading) return <p>loading</p>;
          if (error) return <p>error</p>;
@@ -24,7 +24,7 @@ const PlayList = () => {
               >
                 <div className="hmm">
                   <img
-                    src={`http://localhost:1337${props.attributes.thumbnail.data.attributes.url}`}
+                    src={`https://podcast-backend-production.up.railway.app${props.attributes.thumbnail.data.attributes.url}`}
                     className="imagetag"
                     alt="wow"
                   />

@@ -27,7 +27,7 @@ const NavBar = () => {
               <Nav className="navs">Single Podcast</Nav>
               </Link> */}
               <Nav className="navs">Contact</Nav>
-              <Nav className="navs">Login</Nav>
+              {/* <Nav className="navs">Login</Nav> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

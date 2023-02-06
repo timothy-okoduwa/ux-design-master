@@ -64,7 +64,7 @@ const Slider = ({ estate }) => {
           {estate.map((props) => (
             <div>
               <img
-                src={`http://localhost:1337${props.attributes.thumbnail.data.attributes.url}`}
+                src={`https://podcast-backend-production.up.railway.app${props.attributes.thumbnail.data.attributes.url}`}
                 className="imagetag2"
                 alt={props.attributes.thumbnail.data.attributes.ext}
               />

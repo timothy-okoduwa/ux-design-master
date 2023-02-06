@@ -10,7 +10,7 @@ import Single from '../Single/Single'
 const Episode = () => {
 
              const { loading, error, estate } = useFetch(
-               'http://localhost:1337/api/playlists?populate=*'
+               'https://podcast-backend-production.up.railway.app/api/playlists?populate=*'
              );
              if (loading) return <p>loading</p>;
              if (error) return <p>error</p>;

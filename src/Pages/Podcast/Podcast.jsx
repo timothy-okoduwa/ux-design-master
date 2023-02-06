@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 const Podcast = () => {
   const { id } = useParams();
   const { loading, error, estate } = useFetch(
-    `http://localhost:1337/api/playlists/${id}?populate=episodes`
+    `https://podcast-backend-production.up.railway.app/api/playlists/${id}?populate=episodes`
   );
       if (loading) return <p>loading</p>;
       if (error) return <p>error</p>;
