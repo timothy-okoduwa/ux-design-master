@@ -61,12 +61,12 @@ const Slider = ({ estate }) => {
           )}
         </div>
         <div className="ul" ref={scrl} onScroll={scrollCheck}>
-          {estate.map((props) => (
+          {estate?.map((props) => (
             <div>
               <img
-                src={`https://podcast-backend-production.up.railway.app${props.attributes.thumbnail.data.attributes.url}`}
+                src={props?.attributes?.thumbs}
                 className="imagetag2"
-                alt={props.attributes.thumbnail.data.attributes.ext}
+                // alt={props?.attributes?.thumbnail?.data?.attributes?.ext}
               />
             </div>
           ))}

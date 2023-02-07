@@ -3,7 +3,7 @@ import useFetch from '../../components/Hooks/useFetch';
 import './Single.css';
 const Single = () => {
          const { loading, error, estate } = useFetch(
-           'https://podcast-backend-production.up.railway.app/api/singles'
+           'https://strapi-production-3f07.up.railway.app/api/singles'
          );
          if (loading) return <p>loading</p>;
          if (error) return <p>error</p>;

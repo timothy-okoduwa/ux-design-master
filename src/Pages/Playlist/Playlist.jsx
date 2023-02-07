@@ -3,12 +3,13 @@ import useFetch from '../../components/Hooks/useFetch';
 import './Playlist.css';
 import Card from 'react-bootstrap/Card';
 // import b from '../image/3.png';
+// import ImageMap from '../HomePage/ImageMap';
 import d from '../image/avatar.png';
 import { Link } from 'react-router-dom';
 const Playlist = () => {
      const [search, setSearch] = React.useState('');
          const { loading, error, estate } = useFetch(
-           'https://podcast-backend-production.up.railway.app/api/playlists?populate=*'
+           'https://strapi-production-3f07.up.railway.app/api/playlists?populate=*'
          );
          if (loading) return <p>loading</p>;
          if (error) return <p>error</p>;
@@ -29,7 +30,7 @@ const Playlist = () => {
         <div className="downward">
           <div className="cardHolder">
             {estate
-              .filter((props) => {
+              ?.filter((props) => {
                 if (search === '') {
                   return props;
                 } else if (
@@ -40,7 +41,7 @@ const Playlist = () => {
                   return props;
                 }
               })
-              .map((props) => (
+              ?.map((props) => (
                 <Card className="carditself" key={props.id}>
                   <Link
                     to={`/podcast/${props.id}`}
@@ -48,10 +49,11 @@ const Playlist = () => {
                   >
                     <div className="hmm">
                       <img
-                        src={`https://podcast-backend-production.up.railway.app${props.attributes.thumbnail.data.attributes.url}`}
                         className="imagetag"
-                        alt="wow"
-                      />
+                        src={props?.attributes?.thumbs}
+                        // src={`https://res.cloudinary.com/t8m0thy/image/upload/v1675701022/1_06556325b0.png`}
+                      />{' '}
+                      <div>{props?.attributes?.thumb?.data?.attributes?.url}</div>
                       <Card.Body>
                         <div className="tit">
                           {props.attributes.authorName} -{' '}

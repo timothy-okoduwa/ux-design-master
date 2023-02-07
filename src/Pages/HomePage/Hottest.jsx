@@ -5,7 +5,7 @@ import { BsPlayFill } from 'react-icons/bs';
 import useFetch from '../../components/Hooks/useFetch';
 const Hottest = () => {
              const { loading, error, estate } = useFetch(
-               'https://podcast-backend-production.up.railway.app/api/hottests'
+               'https://strapi-production-3f07.up.railway.app/api/hottests'
              );
              if (loading) return <p>loading</p>;
              if (error) return <p>error</p>;
