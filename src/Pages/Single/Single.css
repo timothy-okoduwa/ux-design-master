@@ -25,3 +25,20 @@ color: #FFFFFF;
 
 }
 }
+.okm{
+    width: 100%;
+    object-fit: cover;
+        height: 170px;
+        border-radius: 12px 12px 0 0;
+}
+.taken{
+    display: flex;
+    flex-direction: column;
+justify-content: flex-end;
+/* align-items: center; */
+    background-color: rgba(214, 214, 214, 0.741);
+    height: 300px;
+    border-radius: 12px;
+padding: 10px;
+
+}

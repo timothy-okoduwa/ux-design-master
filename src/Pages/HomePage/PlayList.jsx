@@ -5,11 +5,14 @@ import Card from 'react-bootstrap/Card';
 import d from '../image/avatar.png';
 import { Link } from 'react-router-dom';
 import useFetch from '../../components/Hooks/useFetch';
+import Loader from '../../components/Loader'
 const PlayList = () => {
          const { loading, error, estate } = useFetch(
            'https://strapi-production-3f07.up.railway.app/api/playlists?pagination[page]=1&pagination[pageSize]=2&populate=thumbnail'
          );
-         if (loading) return <p>loading</p>;
+         if (loading) return (
+<Loader/>
+         );
          if (error) return <p>error</p>;
   return (
     <div>

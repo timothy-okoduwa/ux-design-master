@@ -2,12 +2,16 @@ import React from 'react'
 import './HomePage.css';
 import { BsPlayFill } from 'react-icons/bs';
 // import s from '../image/mas.png';
+import p from './pod.jpg'
 import useFetch from '../../components/Hooks/useFetch';
+import Loader from '../../components/Loader'
 const Hottest = () => {
              const { loading, error, estate } = useFetch(
                'https://strapi-production-3f07.up.railway.app/api/hottests'
              );
-             if (loading) return <p>loading</p>;
+             if (loading) return (
+            <Loader/>
+             );
              if (error) return <p>error</p>;
   return (
     <div>
@@ -16,17 +20,18 @@ const Hottest = () => {
         {estate.map((props) => (
           <>
             <div className="col col-12 col-lg-6 ">
-              <div className="">
+              <div className="anchor">
+                <div className="text-info">
+                  <img src={p} alt="" className="okv mb-2" />
+                </div>
                 <iframe
-                  style={{ borderRadius: '12px' }}
+                  style={{ borderRadius: '0 0 12px 12px' }}
                   src={props.attributes.link}
+                  height="102px"
                   width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allowfullscreen=""
+                  frameborder="0"
+                  scrolling="no"
                   title="wonderful"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
                 ></iframe>
               </div>
             </div>

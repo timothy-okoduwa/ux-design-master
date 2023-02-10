@@ -7,12 +7,15 @@ import Slider from './Slider';
 import useFetch from '../../components/Hooks/useFetch';
 import Hottest from './Hottest';
 import Single from '../Single/Single'
+import Loader from '../../components/Loader'
 const Episode = () => {
 
              const { loading, error, estate } = useFetch(
                'https://strapi-production-3f07.up.railway.app/api/playlists?populate=*'
              );
-             if (loading) return <p>loading</p>;
+             if (loading) return (
+    <Loader/>
+             );
              if (error) return <p>error</p>;
   return (
     <div className="main">

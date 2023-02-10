@@ -4,12 +4,13 @@ import './Podcast.css'
 // import Iframe from 'react-iframe'
 import useFetch from '../../components/Hooks/useFetch'
 import { useParams } from 'react-router-dom'
+import Loader from '../../components/Loader'
 const Podcast = () => {
   const { id } = useParams();
   const { loading, error, estate } = useFetch(
     `https://strapi-production-3f07.up.railway.app/api/playlists/${id}?populate=episodes`
   );
-      if (loading) return <p>loading</p>;
+      if (loading) return <Loader />;
       if (error) return <p>error</p>;
   return (
     <>
@@ -26,13 +27,11 @@ const Podcast = () => {
                   <iframe
                     style={{ borderRadius: '12px', marginTop: '25px' }}
                     src={ous?.attributes?.mp3link}
+                    height="100%"
                     width="100%"
-                    height="352"
-                    frameBorder="0"
-                    title="dunno"
-                    allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
+                    frameborder="0"
+                    scrolling="no"
+                    title="wonderful"
                   />
                   <div>{ous.authorName}</div>
                 </div>

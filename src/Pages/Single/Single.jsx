@@ -1,11 +1,15 @@
 import React from 'react'
 import useFetch from '../../components/Hooks/useFetch';
 import './Single.css';
+import p from './pod.jpg'
+import Loader from '../../components/Loader'
 const Single = () => {
          const { loading, error, estate } = useFetch(
            'https://strapi-production-3f07.up.railway.app/api/singles'
          );
-         if (loading) return <p>loading</p>;
+         if (loading) return (
+<Loader/>
+         );
          if (error) return <p>error</p>;
   return (
     <div className=" plist">
@@ -16,17 +20,20 @@ const Single = () => {
           <div className="row">
             {estate.map((props) => (
               <div className="col-12 col-lg-3 mt-4">
-                <iframe
-                  style={{ borderRadius: '12px' }}
-                  src={props.attributes.link}
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  title="wonderful"
-                  allowfullscreen=""
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                ></iframe>
+                <div className="taken">
+                  <div>
+                    <img src={p} alt="" className="okm mb-2" />
+                  </div>
+                  <iframe
+                    style={{ borderRadius: '0 0 12px 12px' }}
+                    src={props.attributes.link}
+                    height="102px"
+                    width="100%"
+                    frameborder="0"
+                    scrolling="no"
+                    title="wonderful"
+                  ></iframe>
+                </div>
               </div>
             ))}
           </div>

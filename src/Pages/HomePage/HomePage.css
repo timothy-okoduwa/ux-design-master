@@ -1,3 +1,8 @@
+body{
+    background-color: black !important;
+}
+
+
 .containerr {
   position: relative;
   text-align: center;
@@ -284,4 +289,16 @@ width: 100%;
 opacity: 0.5;
 }
 
+}
+.anchor{
+    background-color: #F2F2F2;
+    height: 100%;
+    border-radius: 12px;
+padding: 10px;
+}
+.okv{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+       border-radius: 12px 12px 0 0;
 }
