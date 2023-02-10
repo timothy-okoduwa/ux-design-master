@@ -13,7 +13,7 @@ const Single = () => {
          if (error) return <p>error</p>;
   return (
     <div className=" plist">
-      <div className="care">Have fun listening to educating contents </div>
+      <div className="care">Ux Design Episodes </div>
 
       <div style={{ marginTop: '30px' }}>
         <div className="container">

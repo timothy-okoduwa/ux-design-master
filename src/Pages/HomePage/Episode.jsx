@@ -21,7 +21,7 @@ const Episode = () => {
     <div className="main">
       <div className="container">
         <Hottest />
-        <div className="current mt-4 mb-4">Top Creators </div>
+        <div className="current mt-4 mb-4">Featured Speakers </div>
 
         <Slider estate={estate} />
       </div>

@@ -15,7 +15,7 @@ const Hottest = () => {
              if (error) return <p>error</p>;
   return (
     <div>
-      <div className="current pt-5">hottest Episode</div>
+      <div className="current pt-5">Hottest Episode</div>
       <div className="row mt-5">
         {estate.map((props) => (
           <>
